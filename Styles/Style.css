@@ -1,0 +1,13 @@
+body {
+  background-color: lightskyblue;
+}
+
+#cube {
+  position: absolute;
+  background-color: lightyellow;
+  width: 75px;
+  height: 75px;
+  border-radius: 12px;
+  top: 10%;
+  left: 10%;
+}
