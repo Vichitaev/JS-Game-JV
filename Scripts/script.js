@@ -1,9 +1,7 @@
-document.querySelector('.player').addEventListener('click', function(){
-    this.style.backgroundColor='red';
-    })
-    
+
+
     let posTop = 10;
-    document.addEventListener('keydown', function(event){
+    let move = document.addEventListener('keydown', function(event){
     console.log(event);
     const key = event.code;
     if(key =="ArrowDown"){
@@ -52,10 +50,38 @@ document.querySelector('.player').addEventListener('click', function(){
     document.querySelector('.player').style.left = posLeft + '%';
     })
 
+
+    let touched = document.querySelector('.player').addEventListener('click', function(){
+        (this.style.backgroundColor='red');
+        (this.style.display='none');
+        alert('You won!');
+        
+    })
+let timerId;
+    function startTimer(duration, display) {
+        let timer = duration, minutes, seconds;
+        timerId= setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
     
-
-
-
-
-
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = minutes + ":" + seconds;
+    
+            if (--timer <= -1) {
+                clearInterval(timerId)
+                alert('Keybord won!');
+                (document.querySelector('.player').style.backgroundColor='green');
+                ;
+                
+            }
+        }, 1000);
+    }
+    
+    window.onload = function () {
+        let tmr = 10,
+            display = document.querySelector('#time');
+        startTimer(tmr, display);
+    };
 
