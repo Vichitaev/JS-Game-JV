@@ -1,12 +1,16 @@
-body {
+.container {
+  height: 850px;
+  width: 850px;
+  margin: 50px auto;
+  position: relative;
   background-color: lightskyblue;
 }
 
-#cube {
+.player {
   position: absolute;
   background-color: lightyellow;
-  width: 75px;
-  height: 75px;
+  width: 10%;
+  height: 10%;
   border-radius: 12px;
   top: 10%;
   left: 10%;
