@@ -51,12 +51,8 @@
     })
 
 
-    let touched = document.querySelector('.player').addEventListener('click', function(){
-        (this.style.backgroundColor='red');
-        (this.style.display='none');
-        alert('You won!');
-        
-    })
+  
+
 let timerId;
     function startTimer(duration, display) {
         let timer = duration, minutes, seconds;
@@ -69,11 +65,12 @@ let timerId;
     
             display.textContent = minutes + ":" + seconds;
     
-            if (--timer <= -1) {
+            if (--timer == -1) {
                 clearInterval(timerId)
                 alert('Keybord won!');
                 (document.querySelector('.player').style.backgroundColor='green');
-                ;
+                (document.querySelector('.player').removeEventListener);
+                
                 
             }
         }, 1000);
@@ -84,4 +81,13 @@ let timerId;
             display = document.querySelector('#time');
         startTimer(tmr, display);
     };
+
+
+    let touched = document.querySelector('.player').addEventListener('click', function(){
+        clearInterval(timerId);
+        (this.style.backgroundColor='red');
+        alert('You won!'); 
+        
+        
+    })
 
